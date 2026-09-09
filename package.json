@@ -1,0 +1,17 @@
+{
+  "name": "static-page-portafolio",
+  "version": "1.0.0",
+  "description": "Mi pagina estatica presentacion",
+  "license": "ISC",
+  "author": "gabriel santiago gaitan rendon",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/main.css -o ./src/public/output.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/main.css -o ./src/public/output.css"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
