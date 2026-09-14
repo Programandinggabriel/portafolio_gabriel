@@ -3,34 +3,43 @@
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Mi presentacion</title>
+    <title>Portafolio Gabriel Gaitán</title>
     <link rel="stylesheet" href="./public/output.css"/>
     <style>
+        html{
+            scroll-behavior: smooth;
+        }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body>
     <main>
-        <nav class="bg-gray-200 shadow shadow-gray-300 w-full max-w-400 px-8 md:px-auto sticky top-0 z-10">
-            <div class="md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
+        <nav class="bg-gray-200 shadow shadow-gray-300 w-full px-8 md:px-auto sticky top-0 z-10">
+            <div class="md:h-16 h-auto py-3 md:py-0 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
                 <img src="./public/developer_icon.png" class="object-contain w-10 h-10">
-                <div class="text-gray-500 order-3 w-full md:w-auto md:order-2">
-                    <ul class="flex font-semibold justify-between">
-                        <li class="md:px-4 md:py-2 text-indigo-500"><a href="#index">Inicio</a></li>
-                        <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#projects">Proyectos</a></li>
-                        <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#experience">Experiencia</a></li>
-                        <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#contact">Contacto</a></li>
+                <button id="menu-btn" onclick="menuShow()" class="block md:hidden text-gray-400 hover:text-white ">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <div id="menu" class="absolute top-full left-0 w-full text-center bg-gray-200 md:bg-transparent shadow-md md:shadow-none md:static md:w-auto hidden md:block py-4 md:py-0">
+                    <ul class="flex flex-col md:flex-row font-semibold justify-between space-y-3">
+                        <li onclick="menuShow()" class="md:px-4 md:py-2 text-indigo-500"><a href="#index">Inicio</a></li>
+                        <li onclick="menuShow()" class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#projects">Proyectos</a></li>
+                        <li onclick="menuShow()" class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#experience">Experiencia</a></li>
+                        <li onclick="menuShow()" class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#contact">Contacto</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div class="flex flex-col items-center w-full p-10">
-            <section id="index" class="w-full max-w-400 border border-slate-200 rounded-2xl shadow-sm mt-5 p-5 scroll-mt-20">
+        <div class="flex flex-col items-center w-full gap-3 p-4">
+            <section id="index" class="w-full max-w-400 border border-slate-200 rounded-2xl shadow-sm p-5 scroll-mt-20 opacity-0 transition-all duration-700">
                 <div class="grid grid-cols-1 md:grid-cols-[max-content_1fr] gap-2">
-                    <img src="./public/me.jpeg" class="h-100 w-100 object-contain mx-auto rounded-full"/>
-                    <div class="flex flex-col">
-                        <h1 class="font-bold text-2xl">
+                    <img src="./public/me.jpeg" class="h-75 w-75 object-contain mx-auto rounded-full"/> 
+                    <div class="flex flex-col mt-10 md:mt-0">
+                        <h1 class="font-bold text-lg md:text-2xl">
                             Gabriel Santiago Gaitán Rendón
                         </h1>
                         <h2 class="font-bold text-lg">
@@ -46,14 +55,15 @@
                         </p>
 
                         <h1 class="text-2xl font-bold mt-5">Sobre mí</h1>
-                        <p>
-                            Soy desarrollador de software enfocado en backend, APIs, automatización e integración de sistemas, con experiencia en proyectos de banca, logística y consultoría. 
-                        </p>
-                        <p>
-                            Trabajo principalmente con Python, frameworks backend y bases de datos SQL, y actualmente estoy fortaleciendo mis conocimientos en Node.js y desarrollo web. 
-                            También estoy desarrollando habilidades en análisis de datos y Power BI, buscando complementar mi perfil técnico con una mejor comprensión y aprovechamiento de los datos en los procesos de negocio.
-                        </p>
-                        
+                        <div class="mt-4">
+                            <p>
+                                Soy desarrollador de software enfocado en backend, APIs, automatización e integración de sistemas, con experiencia en proyectos de banca, logística y consultoría. 
+                            </p>
+                            <p>
+                                Trabajo principalmente con Python, frameworks backend y bases de datos SQL, y actualmente estoy fortaleciendo mis conocimientos en Node.js y desarrollo web. 
+                                También estoy desarrollando habilidades en análisis de datos y Power BI, buscando complementar mi perfil técnico con una mejor comprensión y aprovechamiento de los datos en los procesos de negocio.
+                            </p>
+                        </div>
                         <p class="text-center font-bold text-lg mt-8">Mis Skills</p>
                         <div class="relative w-full max-w-4xl mx-auto px-12 py-8 bg-white rounded-xl shadow-sm">
                             <div id="logo-carousel" class="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar pointer-events-auto">
@@ -92,10 +102,10 @@
                             </button>
                         </div>
 
-                        <h2 class="font-bold mt-5 text-lg">Formacion</h2>
+                        <h2 class="font-bold mt-5 text-lg">Formación</h2>
                         <p>
                             Ingenieria de software </br>
-                            Politecnico Grancolombiano </br>
+                            Politécnico Grancolombiano </br>
                             2021-Actualidad
                         </p>
                         <h2 class="font-bold mt-5 text-lg">Cursos y certificaciones</h2>
@@ -124,7 +134,108 @@
                     </div>
                 </div>
             </section>
-            <section id="experience" class="w-full max-w-400 border border-slate-200 rounded-2xl shadow-sm mt-5 p-5 scroll-mt-20">
+            <section id="projects" class="w-full max-w-400 border border-slate-200 rounded-2xl shadow-sm p-5 scroll-mt-20 transition-all duration-700">
+                <h1 class="font-bold text-2xl text-center">Proyectos</h1>
+                <div class="flex flex-col gap-5 mt-5">
+                    <div>
+                        <h2 class="font-bold text-2xl">
+                            1. Product Tracker
+                        </h2>
+                    
+                        <h3 class="font-bold mt-2">
+                            Aplicación web para seguimiento de productos y cambios de precio.
+                        </h3>
+                        <a 
+                            href="https://tracker.gabrielgaitan.dev/login"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 mt-3 text-blue-600 hover:text-blue-800 font-medium transition-colors"
+                        >
+                            Visitar proyecto
+                            <svg 
+                                xmlns="http://www.w3.org/2000/svg" 
+                                fill="none" 
+                                viewBox="0 0 24 24" 
+                                stroke-width="2" 
+                                stroke="currentColor" 
+                                class="w-4 h-4"
+                            >
+                                <path 
+                                    stroke-linecap="round" 
+                                    stroke-linejoin="round" 
+                                    d="M13.5 6H18m0 0v4.5m0-4.5-7.5 7.5M19.5 12.75V18A1.5 1.5 0 0 1 18 19.5H6A1.5 1.5 0 0 1 4.5 18V6A1.5 1.5 0 0 1 6 4.5h5.25"
+                                />
+                            </svg>
+                        </a>
+                        <div class="space-y-3 mt-5">
+                            <p>
+                                Permite consultar productos, agregarlos a favoritos y configurar alertas para realizar seguimiento de precios.
+                            </p>
+                            <p>
+                                Proyecto full stack actualmente en desarrollo, orientado a permitir que los usuarios consulten productos, los guarden como favoritos y configuren alertas para realizar seguimiento de sus precios.
+                                La aplicación integra una API externa de productos y utiliza una base de datos para almacenar la información asociada a las interacciones de los usuarios.
+                            </p>
+                            <p>
+                                Personalmente quiero que este proyecto tenga mas funcionabilidades y pueda crecer con el paso del tiempo.
+                            </p>
+                        </div>
+
+                        <h3 class="font-bold mt-5">
+                            ¿Qué problema resuelve?
+                        </h3>
+                        <p>
+                            Evita que el usuario tenga que revisar constantemente una tienda virtual para saber si sus artículos favoritos bajaron de precio. 
+                            La aplicación monitorea los precios y envía alertas por correo cuando detecta una disminución.
+                        </p>
+                        <h3 class="font-bold mt-5">
+                            Desiciones tecnicas
+                        </h3>
+                        <ol class="list-disc list-inside">
+                            <li>Integración con API eBay</li>
+                            <li>Redis para reducir solicitudes repetitivas</li>
+                            <li>Tareas programadas para detectar cambios de precio</li>
+                        </ol>
+                        
+                        <h3 class="font-bold mt-5">
+                            Tecnologías:
+                        </h3> 
+                        <p>
+                            Node.js · Next.js · SQL · Redis · Tailwind CSS · API externa
+                        </p>
+
+                        <h3 class="font-bold mt-5">
+                            Estado:
+                        </h3> 
+                        <p>
+                            En desarrollo
+                        </p>
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-2xl">
+                            2. Portafolio personal
+                        </h2>
+                        
+                        <p class="mt-2">
+                            Página web estática desarrollada desde cero para presentar mi experiencia profesional, proyectos y evolución como desarrollador.
+                        </p>
+                        
+                        <h3 class="font-bold mt-5">
+                            Tecnologías:
+                        </h3> 
+                        <p>
+                            HTML · Tailwind CSS · JavaScript
+                        </p>
+                    
+                        <h3 class="font-bold mt-5">
+                            Estado:
+                        </h3> 
+                        <p>
+                            En desarrollo
+                        </p>
+                    </div>
+                </div>
+            </section>
+             <section id="experience" class="w-full max-w-400 border border-slate-200 rounded-2xl shadow-sm p-5 scroll-mt-20 transition-all duration-700">
                 <h1 class="text-2xl font-bold text-center mt-5">Experiencia</h1>
                 <div class="flex flex-col">
                     <ul role="list" class="m-8 max-w-screen-md">
@@ -222,93 +333,14 @@
                     </ul>
                 </div>
             </section>
-            <section id="projects" class="w-full max-w-400 border border-slate-200 rounded-2xl shadow-sm mt-5 p-5 scroll-mt-20">
-                <h1 class="font-bold text-2xl text-center">Proyectos</h1>
-                <div class="flex flex-col gap-5 mt-5">
-                    <h2 class="font-bold text-2xl">
-                        1. Product Tracker
-                    </h2>
-                    <h3 class="font-bold indent-8">
-                        Aplicación web para seguimiento de productos y cambios de precio.
-                    </h3>
-                    <div class="space-y-4">
-                        <p class="pl-7 -indent-8 text-justify">
-                            <span class="inline-block w-7"></span>
-                            Permite consultar productos, agregarlos a favoritos y configurar alertas para realizar seguimiento de precios.
-                        </p>
-                        <p class="pl-7 -indent-8 text-justify">
-                            <span class="inline-block w-7"></span>
-                            Proyecto full stack actualmente en desarrollo, orientado a permitir que los usuarios consulten productos, los guarden como favoritos y configuren alertas para realizar seguimiento de sus precios.
-                            La aplicación integra una API externa de productos y utiliza una base de datos para almacenar la información asociada a las interacciones de los usuarios.
-                        </p>
-                        <p class="pl-7 -indent-8 text-justify">
-                            <span class="inline-block w-7"></span>
-                            Personalmente quiero que este proyecto tenga mas funcionabilidades y pueda crecer con el paso del tiempo
-                        </p>
-                    </div>
-
-                    <h3 class="font-bold indent-8">
-                        ¿Qué problema resuelve?
-                    </h3>
-                    <p class="pl-7 -indent-8 text-justify">
-                        <span class="inline-block w-7"></span>
-                        Evita que el usuario tenga que revisar constantemente una tienda virtual para saber si sus artículos favoritos bajaron de precio. 
-                        La aplicación monitorea los precios y envía alertas por correo cuando detecta una disminución.
-                    </p>
-                    <h3 class="font-bold indent-8">
-                        Desiciones tecnicas
-                    </h3>
-                    <ol class="list-disc list-inside indent-8">
-                        <li>Integracion con API eBay</li>
-                        <li>Redis para reducir solicitudes repetitivas</li>
-                        <li>Tareas programadas para detectar cambios de precio</li>
-                    </ol>
-                    
-                    <h3 class="font-bold indent-8">
-                        Tecnologías:
-                    </h3> 
-                    <p class="indent-8">
-                        Node.js · Next.js · SQL · Redis · Tailwind CSS · API externa
-                    </p>
-
-                    <h3 class="font-bold indent-8">
-                        Estado:
-                    </h3> 
-                    <p class="indent-8">
-                        En desarrollo
-                    </p>
-                    
-                    
-                    
-                    <h2 class="font-bold text-2xl">
-                        2. Portfolio personal
-                    </h2>
-                    
-                    <p class="indent-8">
-                        Página web estática desarrollada desde cero para presentar mi experiencia profesional, proyectos y evolución como desarrollador.
-                    </p>
-
-                     
-                    <h3 class="font-bold indent-8">
-                        Tecnologías:
-                    </h3> 
-                    <p class="indent-8">
-                        HTML · Tailwind CSS · JavaScript
-                    </p>
-                   
-                    <h3 class="font-bold indent-8">
-                        Estado:
-                    </h3> 
-                    <p class="indent-8">
-                        En desarrollo
-                    </p>
-                </div>
-            </section>
-            <section id="contact" class="w-full max-w-400 border border-slate-200 rounded-2xl shadow-sm mt-5 p-5">
+            <section id="contact" class="w-full max-w-400 border border-slate-200 rounded-2xl shadow-sm p-5 transition-all duration-700">
                 <h1 class="font-bold text-2xl text-center">¿Hablamos?</h1>
                 <div class="flex flex-col mt-5">
                     <p>
-                    Actualmente estoy interesado en nuevas oportunidades en desarrollo de software, especialmente en roles con enfoque backend y desarrollo de aplicaciones. También estoy ampliando mi perfil hacia el desarrollo web y el análisis de datos.
+                    Actualmente estoy interesado en nuevas oportunidades en desarrollo de software, especialmente en roles con enfoque backend y desarrollo de aplicaciones.
+                    </p>
+                    <p>
+                        También estoy ampliando mi perfil hacia el desarrollo web y el análisis de datos.
                     </p>
                     <div class="flex gap-5 justify-center mt-2">
                         <a href="https://github.com/Programandinggabriel?tab=repositories" target="_blank">
@@ -327,6 +359,11 @@
     </main>
 </body>
 <script>
+    function menuShow(){
+        const menu = document.getElementById('menu');
+        menu.classList.toggle('hidden')
+    }
+    
     function scrollCarousel(direction) {
         const carousel = document.getElementById('logo-carousel');
         // Detecta el ancho del primer elemento para saber exactamente cuánto desplazarse
@@ -337,5 +374,41 @@
             behavior: 'smooth'
         });
     }
+
+    const allSections = document.querySelectorAll('section');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.remove(
+                    'opacity-0', 
+                    'translate-y-10'
+                )
+                entry.target.classList.add(
+                    'opacity-100', 
+                    'translate-y-0'
+                )
+
+                //observer.unobserve(entry.target);
+            }
+            
+            
+            if(!entry.isIntersecting){
+                entry.target.classList.remove(
+                    'opacity-100', 
+                    'translate-y-0'
+                )
+                entry.target.classList.add(
+                    'opacity-0', 
+                    'translate-y-10'
+                )
+            }   
+            
+            
+        })
+    })
+
+    allSections.forEach(section => observer.observe(section))
+
 </script>
 </html>
