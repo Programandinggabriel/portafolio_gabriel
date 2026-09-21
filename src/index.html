@@ -106,7 +106,7 @@
                         <p>
                             Ingenieria de software </br>
                             Politécnico Grancolombiano </br>
-                            2021-Actualidad
+                            2021-Actualidad (8vo semestre)
                         </p>
                         <h2 class="font-bold mt-5 text-lg">Cursos y certificaciones</h2>
                         <ul class="list-disc list-inside">
@@ -330,6 +330,67 @@
                                 </ol>
                             </div>
                         </li>
+                        <li class="group relative flex flex-col pb-8 pl-7 last:pb-0">
+                            <div class="absolute bottom-0 left-[calc(0.25rem-0.5px)] top-0 w-px bg-black group-first:top-3"></div>
+                            <div class="absolute left-0 top-2 h-2 w-2 rounded-full border border-sky-300 bg-zinc-950"></div>
+                            <h3 class="mt-2 text-sm/6 font-semibold text-white">Opening reception</h3>
+                            <p class="font-display text-2xs/6 order-first font-semibold tracking-[0.2em] text-sky-300">
+
+                                <p>Sept 2022 - Sept 2023</p>
+                                <h1 class="font-bold text-lg">Desarrollador Junior</h1>
+                                <h2 class="font-bold">Aslecol SA</h2>
+                            </p>
+                            <div class="mt-0.5 text-sm">
+                                <ol class="mt-2 list-decimal list-inside">
+                                    <li>
+                                       Desarrollé aplicaciones de consola en Python para
+                                       procesamiento masivo de datos en Excel usando Pandas.
+                                    </li>
+                                    <li>
+                                        Construí sistema automático de generación de cuentas de
+                                        cobro desde archivos CSV con exportación a Excel.
+                                    </li>
+                                    <li>
+                                        Integré Vicidial para reportes horarios de productividad por
+                                        asesor.
+                                    </li>
+                                    <li>
+                                        Elaboré tableros de métricas operativas con tablas y gráficos
+                                        para seguimiento de campañas.
+                                    </li>
+                                </ol>
+                            </div>
+                        </li>
+                        <li class="group relative flex flex-col pb-8 pl-7 last:pb-0">
+                            <div class="absolute bottom-0 left-[calc(0.25rem-0.5px)] top-0 w-px bg-black group-first:top-3"></div>
+                            <div class="absolute left-0 top-2 h-2 w-2 rounded-full border border-sky-300 bg-zinc-950"></div>
+                            <h3 class="mt-2 text-sm/6 font-semibold text-white">Opening reception</h3>
+                            <p class="font-display text-2xs/6 order-first font-semibold tracking-[0.2em] text-sky-300">
+
+                                <p>Jun 2022 - Jun 2023</p>
+                                <h1 class="font-bold text-lg">Analista de desarrollo de software</h1>
+                                <h2 class="font-bold">Grupo Repremundo</h2>
+                            </p>
+                            <div class="mt-0.5 text-sm">
+                                <ol class="mt-2 list-decimal list-inside">
+                                    <li>
+                                        Desarrollé mejoras funcionales en aplicaciones PHP según
+                                        requerimientos de clientes.
+                                    </li>
+                                    <li>
+                                        Construí y amplié APIs en Python para integración entre
+                                        sistemas.
+                                    </li>
+                                    <li>
+                                        Optimicé reportes operativos en SQL Server.
+                                    </li>
+                                    <li>
+                                        Brindé soporte funcional sobre plataforma JDA Software para
+                                        logística.
+                                    </li>
+                                </ol>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </section>
@@ -343,16 +404,28 @@
                         También estoy ampliando mi perfil hacia el desarrollo web y el análisis de datos.
                     </p>
                     <div class="flex gap-5 justify-center mt-2">
-                        <a href="https://github.com/Programandinggabriel?tab=repositories" target="_blank">
+                        <a 
+                            href="https://github.com/Programandinggabriel?tab=repositories" 
+                            target="_blank"
+                        >
                             <img src="./public/github_icon.png" class="object-contain rounded-full size-10">
                         </a>
-                        <a href="http://www.linkedin.com/in/gabriel-santiago-gait%C3%A1n-rend%C3%B3n-a56615200" target="_blank">
+                        <a 
+                            href="http://www.linkedin.com/in/gabriel-santiago-gait%C3%A1n-rend%C3%B3n-a56615200" 
+                            target="_blank"
+                        >
                             <img src="./public/linkedin_icon.png" class="object-contain rounded-full size-10">
                         </a>
-                        <a href="mailto:gabrielgaitanrendon@gmail.com">
+                        <a onclick="emailAction()">
                             <img src="./public/gmail_icon.png" class="object-contain rounded-full size-10">
                         </a>
                     </div>
+                    <p 
+                        id="copyEmailMessage" 
+                        class="text-center text-sm text-green-400 font-bold mt-3 hidden"
+                    >
+                        Correo copiado en el portapapeles
+                    </p>
                 </div>
             </section>
         </div>
@@ -375,6 +448,29 @@
         });
     }
 
+    async  function emailAction(){
+        function isMobile(){
+            return (
+                (navigator.userAgent.match(/Android/i)) ||
+                (navigator.userAgent.match(/webOS/i)) ||
+                (navigator.userAgent.match(/iPhone/i)) ||
+                (navigator.userAgent.match(/iPod/i)) ||
+                (navigator.userAgent.match(/iPad/i)) ||
+                (navigator.userAgent.match(/BlackBerry/i))
+            );
+        }
+
+        const email = "gabrielgaitanrendon@gmail.com";
+
+        if(isMobile()){
+            window.open(`mailto:${email}`)
+        }else{
+            const messageElement = document.getElementById('copyEmailMessage');
+            await navigator.clipboard.writeText(email)
+            messageElement.classList.remove('hidden')
+        }
+    }
+
     const allSections = document.querySelectorAll('section');
     
     const observer = new IntersectionObserver((entries) => {
@@ -389,22 +485,20 @@
                     'translate-y-0'
                 )
 
-                //observer.unobserve(entry.target);
+                observer.unobserve(entry.target);
             }
             
             
             if(!entry.isIntersecting){
-                entry.target.classList.remove(
+                /*entry.target.classList.remove(
                     'opacity-100', 
                     'translate-y-0'
-                )
+                )*/
                 entry.target.classList.add(
                     'opacity-0', 
                     'translate-y-10'
                 )
             }   
-            
-            
         })
     })
 
