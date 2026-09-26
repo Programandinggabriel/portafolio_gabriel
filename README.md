@@ -1,79 +1,76 @@
-Portafolio personal
+````
+# Portafolio personal
 
 Portafolio web personal desarrollado para presentar mi perfil como desarrollador de software, experiencia, tecnologías y proyectos.
 
-El proyecto está construido con HTML, JavaScript y Tailwind CSS, utilizando Node.js para la gestión de dependencias y herramientas de desarrollo. No utiliza frameworks frontend reactivos, ya que el objetivo es mantener una implementación sencilla, ligera y enfocada en el contenido.
+El proyecto está construido con **HTML, JavaScript y Tailwind CSS**, utilizando **Node.js** para la gestión de dependencias y herramientas de desarrollo. No utiliza frameworks frontend reactivos, ya que el objetivo es mantener una implementación sencilla, ligera y enfocada en el contenido.
 
-Tecnologías
+## Tecnologías
 
-HTML5
+- HTML5
+- JavaScript
+- Tailwind CSS
+- Node.js
+- npm
 
-JavaScript
+## Características
 
-Tailwind CSS
+- Diseño responsive
+- Interfaz desarrollada con Tailwind CSS
+- Secciones de presentación, tecnologías y proyectos
+- Navegación sencilla
+- Sin frameworks frontend reactivos
+- Enfoque en simplicidad y rendimiento
 
-Node.js
+## Estructura del proyecto
 
-npm
-
-Características
-
-Diseño responsive
-
-Interfaz desarrollada con Tailwind CSS
-
-Secciones de presentación, tecnologías y proyectos
-
-Navegación sencilla
-
-Diseño enfocado en rendimiento y simplicidad
-
-Sin frameworks frontend ni arquitectura reactiva
-
-Estructura del proyecto
-portafolio_gabriel/
+```text
+portfolio/
 ├── src/
 │   ├── public/
-│   ├── index.html
 │   ├── main.css
+│   └── index.html
 ├── package.json
 ├── package-lock.json
 └── README.md
+````
 
+ > La estructura puede variar dependiendo de la configuración utilizada para el proyecto.
 
-La estructura puede variar dependiendo de la configuración utilizada para el proyecto.
+ ## Instalación
 
-Instalación
+ Clona el repositorio:
 
-Clona el repositorio:
-
+```
 git clone <URL_DEL_REPOSITORIO>
-cd portafolio_gabriel
+cd portfolio
+```
 
+ Instala las dependencias:
 
-Instala las dependencias:
-
+```
 npm install
+```
 
-Desarrollo
+ ## Desarrollo
 
-Para compilar Tailwind CSS durante el desarrollo:
+ Ejecuta el proyecto utilizando el script definido en `package.json`:
 
+```
 npm run dev
+```
 
+ ## Build
 
-Después, abre el proyecto en el navegador según la configuración definida en el proyecto.
+ Para generar los archivos optimizados para producción:
 
-Build
-
-Para generar los archivos optimizados para producción:
-
+```
 npm run build
+```
 
-Objetivo
+ ## Objetivo
 
-Este proyecto forma parte de mi portafolio personal y tiene como objetivo presentar mi experiencia en desarrollo de software, principalmente en backend, APIs, integración de sistemas y bases de datos, además de los proyectos personales que voy desarrollando para ampliar mis conocimientos en desarrollo web y análisis de datos.
+ Este proyecto forma parte de mi portafolio personal y tiene como objetivo presentar mi experiencia en desarrollo de software, principalmente en **backend, APIs, integración de sistemas y bases de datos**, además de los proyectos personales que desarrollo para ampliar mis conocimientos en desarrollo web y análisis de datos.
+```
 
-LinkedIn: [tu perfil]
-
-Portafolio: [tu dominio]
+```
